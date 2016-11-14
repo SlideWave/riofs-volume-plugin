@@ -12,8 +12,8 @@ RUN mkdir /usr/src && \
 
 # Add patches to make RioFS 0.6 build under Alpine Linux.
 # In 0.7 this will hopefully be unnecessary.
-ADD portability.patch /tmp/portability.patch
-ADD misc.patch /tmp/misc.patch
+ADD patches/portability.patch /tmp/portability.patch
+ADD patches/misc.patch /tmp/misc.patch
 RUN cd /usr/src/riofs-${VERSION} && \
     patch -p1 < /tmp/portability.patch && \
     patch -p1 < /tmp/misc.patch
